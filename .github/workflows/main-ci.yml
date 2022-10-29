@@ -13,4 +13,4 @@ jobs:
       - uses: fwilhe2/setup-kotlin@main
         with:
           install-native: true
-      - run: kotlinc-native src/main/kotlin/Main.kt
+      - run: kotlinc-native src/main/kotlin/app/Main.kt
