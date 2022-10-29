@@ -24,7 +24,7 @@ jobs:
         with:
           install-native: true
       - run: |
-          kotlinc-native src/main/kotlin/app/Main.kt
+          kotlinc-native src/main/kotlin/app/Main.kt -e app.main
 
       - name: Sync Repository
         run: |
