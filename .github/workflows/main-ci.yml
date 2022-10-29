@@ -22,7 +22,7 @@ jobs:
         run: ./gradlew build
 
       # Run Build API
-      - name: Build gradle project
+      - name: Run Build API
         run: ./gradlew run-build-api
 
       - name: Sync Repository
