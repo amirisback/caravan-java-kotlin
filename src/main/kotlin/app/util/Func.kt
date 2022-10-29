@@ -12,8 +12,6 @@ package app.util
 
 object Func {
 
-    const val LINE_BREAK = "---------------------------------------------"
-
-
+    // TODO Create Function Here
 
 }

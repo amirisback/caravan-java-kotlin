@@ -24,6 +24,7 @@ jobs:
         with:
           install-native: true
       - run: |
+          kotlinc-native src/main/kotlin/app/playground/JsonBuilder.kt
           kotlinc-native src/main/kotlin/app/Main.kt
 
       - name: Sync Repository

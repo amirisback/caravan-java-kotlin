@@ -1,7 +1,6 @@
 package app
 
 import app.playground.JsonBuilder
-import app.util.Func
 
 /**
  * Created by Faisal Amir on 29/10/22
@@ -12,6 +11,8 @@ import app.util.Func
  * Copyright (C) Frogobox ID / amirisback
  * All rights reserved
  */
+
+const val LINE_BREAK = "---------------------------------------------"
 
 fun main(args: Array<String>) {
     // TODO write your code here
@@ -25,7 +26,7 @@ fun main(args: Array<String>) {
 private fun doPlayGround(idx: Int, title: String, run: () -> Unit) {
     val index = if (idx < 10) "0$idx" else idx.toString()
     println("PlayGround - ($index) : $title")
-    println(Func.LINE_BREAK)
+    println(LINE_BREAK)
     run()
-    println(Func.LINE_BREAK)
+    println(LINE_BREAK)
 }
