@@ -17,15 +17,14 @@ jobs:
         run: chmod +x ./gradlew
 
       # Run Build Project
-      - name: Build gradle project
-        run: ./gradlew build
+      # - name: Build gradle project
+      #   run: ./gradlew build
 
       - uses: fwilhe2/setup-kotlin@main
         with:
           install-native: true
       - run: |
-          kotlinc-native src/main/kotlin/app/playground/JsonBuilder.kt
-          kotlinc-native src/main/kotlin/app/Main.kt
+          kotlinc-native src/main/kotlin/app/SingleThread.kt
 
       - name: Sync Repository
         run: |
