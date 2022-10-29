@@ -4,13 +4,20 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-20.04, windows-latest, macos-latest ]
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
+      - name: Set Up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
       - uses: fwilhe2/setup-kotlin@main
         with:
           install-native: true
-      - run: kotlinc-native src/main/kotlin/app/Main.kt
+      - run: |
+          kotlinc-native src/main/kotlin/app/Main.kt
