@@ -1,0 +1,16 @@
+name: Main CI
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-20.04, windows-latest, macos-latest ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: fwilhe2/setup-kotlin@main
+        with:
+          install-native: true
+      - run: kotlinc-native src/main/kotlin/Main.kt
