@@ -8,6 +8,10 @@ plugins {
 group = "com.frogobox.caravan"
 version = "1.0.0"
 
+application {
+    mainClass.set("Main")
+}
+
 repositories {
     mavenCentral()
     maven("https://jitpack.io")
@@ -26,6 +30,28 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
 }
 
-application {
-    mainClass.set("MainKt")
+tasks.register("countdown") {
+    println("This is the configuration phase")
+
+    doFirst {
+        println("3")
+    }
+    doFirst {
+        println("This is the execution phase")
+        println("4")
+    }
+
+    doLast {
+        println("2")
+    }
+    doLast {
+        println("1")
+    }
+}
+
+tasks.register ("run-build-api", JavaExec::class.java) {
+    description = "my task does something awesome"
+    classpath = sourceSets["main"].runtimeClasspath
+    // note the addition of "Kt" on the end of the class name.
+    main = "app.Main"
 }

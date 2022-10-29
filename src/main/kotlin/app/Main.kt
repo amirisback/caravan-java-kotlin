@@ -1,3 +1,4 @@
+@file:JvmName("Main")
 package app
 
 import app.playground.JsonBuilder
