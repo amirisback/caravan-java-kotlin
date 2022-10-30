@@ -13,12 +13,20 @@ application {
 }
 
 repositories {
+    google()
     mavenCentral()
     maven("https://jitpack.io")
 }
 
 dependencies {
-    implementation("com.github.frogobox.frogo-sdk:frogocoresdk:2.0.9")
+    implementation("com.google.code.gson:gson:2.10")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava:2.9.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
     testImplementation(kotlin("test"))
 }
 
@@ -28,25 +36,6 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
-}
-
-tasks.register("countdown") {
-    println("This is the configuration phase")
-
-    doFirst {
-        println("3")
-    }
-    doFirst {
-        println("This is the execution phase")
-        println("4")
-    }
-
-    doLast {
-        println("2")
-    }
-    doLast {
-        println("1")
-    }
 }
 
 tasks.register ("run-build-api", JavaExec::class.java) {

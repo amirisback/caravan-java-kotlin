@@ -1,6 +1,8 @@
 @file:JvmName("Main")
+
 package app
 
+import app.playground.ConsumeApi
 import app.playground.JsonBuilder
 
 /**
@@ -22,7 +24,9 @@ fun main(args: Array<String>) {
         JsonBuilder().run()
     }
 
-    println("Damn You Github Action !!")
+    doPlayGround(2, "Consume API") {
+        ConsumeApi().getServer()
+    }
 
 }
 
