@@ -1,9 +1,8 @@
-@file:JvmName("Main")
-
 package app
 
 import app.playground.ConsumeApi
 import app.playground.JsonBuilder
+import app.playground.UrlConverter
 
 /**
  * Created by Faisal Amir on 29/10/22
@@ -25,7 +24,11 @@ fun main(args: Array<String>) {
     }
 
     doPlayGround(2, "Consume API") {
-        ConsumeApi().getServer()
+        ConsumeApi().run()
+    }
+
+    doPlayGround(3, "Url Converter") {
+        UrlConverter().run()
     }
 
 }

@@ -1,6 +1,7 @@
 package app.playground
 
 import app.api.ApiService
+import app.core.BasePlayground
 import app.model.BaseModel
 import app.model.Server
 import com.frogobox.coresdk.ext.doApiRequest
@@ -17,20 +18,11 @@ import com.frogobox.coresdk.source.FrogoApiClient
  * All rights reserved
  */
 
-class ConsumeApi {
+class ConsumeApi : BasePlayground() {
 
-    companion object {
-        const val BASE_URL = "https://amirisback.github.io/"
-        const val END_POINT = "caravan-kotlin/api/v1/server.json"
-    }
+    override fun run() {
 
-    private fun createApiService(): ApiService {
-        return FrogoApiClient.create(BASE_URL)
-    }
-
-    fun getServer() {
-
-        createApiService().getServer().doApiRequest(null, object: FrogoDataResponse<BaseModel<List<Server>>>{
+        createApiService().getServer().doApiRequest(null, object : FrogoDataResponse<BaseModel<List<Server>>> {
             override fun onFailed(statusCode: Int, errorMessage: String) {
                 println("onFailed")
             }
@@ -53,6 +45,16 @@ class ConsumeApi {
         }) {
             println("Disposable")
         }
+
+    }
+
+    companion object {
+        const val BASE_URL = "https://amirisback.github.io/"
+        const val END_POINT = "caravan-kotlin/api/v1/server.json"
+    }
+
+    private fun createApiService(): ApiService {
+        return FrogoApiClient.create(BASE_URL)
     }
 
 }
