@@ -3,6 +3,7 @@ package app
 import app.playground.ConsumeApi
 import app.playground.JsonBuilder
 import app.playground.UrlConverter
+import app.playground.ValidatorPassword
 
 /**
  * Created by Faisal Amir on 29/10/22
@@ -29,6 +30,10 @@ fun main(args: Array<String>) {
 
     doPlayGround(3, "Url Converter") {
         UrlConverter().run()
+    }
+
+    doPlayGround(4, "Validator Password") {
+        ValidatorPassword().run()
     }
 
 }
