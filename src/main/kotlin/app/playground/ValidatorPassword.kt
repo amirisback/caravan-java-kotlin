@@ -45,6 +45,18 @@ class ValidatorPassword : BasePlayground() {
         return matcher.find()
     }
 
+    private fun String.isValidPhoneNumberStripe1() : Boolean {
+        val pattern = Pattern.compile("^[+][0-9]{10,13}\$")
+        val matcher = pattern.matcher(this)
+        return matcher.find()
+    }
+
+    private fun String.isValidPhoneNumberStripe2() : Boolean {
+        val pattern = Pattern.compile("^(?=\\d{1,13}(-\\d{1,13}){0,2}\$)[\\d-]{1,20}\$")
+        val matcher = pattern.matcher(this)
+        return matcher.find()
+    }
+
     private fun String.isValidPassword(): Boolean {
         return this.isNotEmpty() && this.isUsingRegex() && this.length >= 8
     }
