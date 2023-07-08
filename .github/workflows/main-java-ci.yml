@@ -1,7 +1,8 @@
 name: Main Java CI
+
 on:
-  push:
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,6 +24,6 @@ jobs:
       - name: Build gradle project
         run: ./gradlew build
 
-      # Run Build API
-      - name: Run Build API
+      # Run Main Java
+      - name: Run Main Java
         run: ./gradlew run-main-java

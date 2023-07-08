@@ -1,6 +1,7 @@
-name: Build API CI
+name: Main Kotlin CI
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -24,14 +25,10 @@ jobs:
       - name: Build gradle project
         run: ./gradlew build
 
-      # Run Build API
-      - name: Run Build API
-        run: ./gradlew run-build-api
+      # Run Main Java
+      - name: Run Main Java
+        run: ./gradlew run-main-java
 
-      - name: Sync Repository
-        run: |
-          git config user.name 'amirisback'
-          git config user.email 'faisalamircs@gmail.com'
-          git pull
-          git commit -am "Update Server API"
-          git push
+      # Run Main Kotlin
+      - name: Run Main Kotlin
+        run: ./gradlew run-main-kotlin
