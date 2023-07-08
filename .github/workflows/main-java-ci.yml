@@ -1,0 +1,26 @@
+name: Main CI
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Compile file .java to .class
+        run: |
+          cd src/main/java/app
+          javac Main.java
+
+      - name: Run file .class
+        run: |
+          cd src/main/java/app
+          java Main
+
