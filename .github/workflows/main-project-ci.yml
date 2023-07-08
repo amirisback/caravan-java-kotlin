@@ -1,4 +1,4 @@
-name: Main Kotlin CI
+name: Main Project CI
 
 on:
   push:
