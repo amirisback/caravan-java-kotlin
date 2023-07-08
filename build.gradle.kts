@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.10"
+    kotlin("jvm") version "1.8.21"
     application
 }
 
@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.frogobox.frogo-sdk:frogocoresdk:2.0.9")
+    implementation("com.github.frogobox.frogo-sdk:core-sdk:2.2.2")
     testImplementation(kotlin("test"))
 }
 
@@ -28,7 +28,9 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 tasks.register ("run-build-api", JavaExec::class.java) {

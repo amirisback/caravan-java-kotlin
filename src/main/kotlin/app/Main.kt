@@ -1,7 +1,6 @@
 package app
 
 import app.playground.ConsumeApi
-import app.playground.JsonBuilder
 import app.playground.UrlConverter
 import app.playground.ValidatorPassword
 import app.util.Func.doPlayGround
@@ -19,8 +18,6 @@ import app.util.Func.doPlayGround
 
 
 fun main(args: Array<String>) {
-
-    // TODO write your code here
 
     doPlayGround(1, "Consume API") {
         ConsumeApi().run()
