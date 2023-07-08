@@ -16,12 +16,11 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
+      - name: Move to src/main/java/app
+        run: cd src/main/java/app
+
       - name: Compile file .java to .class
-        run: |
-          cd src/main/java/app
-          javac Main.java
+        run: javac Main.java
 
       - name: Run file .class
-        run: |
-          cd src/main/java/app
-          java Main
+        run: java Main
