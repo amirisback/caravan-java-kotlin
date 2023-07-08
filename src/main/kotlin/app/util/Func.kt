@@ -14,4 +14,14 @@ object Func {
 
     // TODO Create Function Here
 
+    const val LINE_BREAK = "---------------------------------------------"
+
+    fun doPlayGround(idx: Int, title: String, run: () -> Unit) {
+        val index = if (idx < 10) "0$idx" else idx.toString()
+        println("PlayGround - ($index) : $title")
+        println(LINE_BREAK)
+        run()
+        println(LINE_BREAK)
+    }
+
 }

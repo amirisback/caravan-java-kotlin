@@ -1,12 +1,14 @@
 package app;
 
-import static app.playground.OuputWord.InnerClass.outputWord;
+
+import app.playground.Word;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        outputWord();
+        Word word = new Word();
+        word.outputWord();
 
     }
 

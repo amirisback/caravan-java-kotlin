@@ -50,7 +50,7 @@ class ConsumeApi : BasePlayground() {
 
     companion object {
         const val BASE_URL = "https://amirisback.github.io/"
-        const val END_POINT = "caravan-kotlin/api/v1/server.json"
+        const val END_POINT = "caravan-kotlin-java/api/v1/server.json"
     }
 
     private fun createApiService(): ApiService {

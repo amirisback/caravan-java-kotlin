@@ -1,4 +1,4 @@
-name: Update Server CI
+name: Build API CI
 on:
   push:
   workflow_dispatch:

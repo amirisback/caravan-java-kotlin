@@ -1,4 +1,4 @@
-name: Main Java CI
+name: Main Kotlin CI
 on:
   push:
   workflow_dispatch:
@@ -25,4 +25,4 @@ jobs:
 
       # Run Build API
       - name: Run Build API
-        run: ./gradlew run-main-java
+        run: ./gradlew run-main-kotlin
